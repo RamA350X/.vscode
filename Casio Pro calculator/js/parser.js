@@ -1,35 +1,49 @@
 // ======================================
 // CASIO PRO CALCULATOR
 // Parser Module
-// Phase 5.2
-// ======================================
-
-/**
- * Converts an expression string
- * into an array of tokens.
- */
-
-function tokenize(expression){
-
-    const regex =
-        /sin|cos|tan|asin|acos|atan|log|ln|√|π|e|n!|\d+(\.\d+)?|[()+\-*/%^]/g;
-
-    return expression.match(regex) || [];
-
-}
-
-// ======================================
-// Convert Display Expression
-// into JavaScript Expression
 // ======================================
 
 function convertExpression(expression){
 
     return expression
 
-        .replace(/×/g,"*")
-        .replace(/÷/g,"/")
-        .replace(/π/g,"Math.PI")
-        .replace(/√\(/g,"Math.sqrt(");
+        .replace(/×/g, "*")
+        .replace(/÷/g, "/")
+        .replace(/π/g, "Math.PI")
+        .replace(/√\(/g, "Math.sqrt(");
+
+}
+
+function calculate(expression){
+
+    if(expression===""){
+
+        return "0";
+
+    }
+
+    try{
+
+        const converted = convertExpression(expression);
+
+        const answer = Function(
+            '"use strict"; return (' + converted + ')'
+        )();
+
+        if(answer===undefined){
+
+            return "0";
+
+        }
+
+        return answer;
+
+    }
+
+    catch{
+
+        return "...";
+
+    }
 
 }

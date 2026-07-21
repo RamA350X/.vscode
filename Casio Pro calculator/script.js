@@ -80,7 +80,8 @@ function appendCharacter(value){
 
     calculator.expression += value;
 
-    calculatePreview();
+    calculator.result =
+        calculate(calculator.expression);
 
     updateDisplay();
 
@@ -95,7 +96,8 @@ function deleteCharacter(){
     calculator.expression =
         calculator.expression.slice(0,-1);
 
-    calculatePreview();
+    calculator.result =
+        calculate(calculator.expression);
 
     updateDisplay();
 
