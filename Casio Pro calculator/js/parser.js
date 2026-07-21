@@ -7,10 +7,21 @@ function convertExpression(expression){
 
     return expression
 
-        .replace(/×/g, "*")
-        .replace(/÷/g, "/")
-        .replace(/π/g, "Math.PI")
-        .replace(/√\(/g, "Math.sqrt(");
+        .replace(/×/g,"*")
+
+        .replace(/÷/g,"/")
+
+        .replace(/π/g,"Math.PI")
+
+        .replace(/e/g,"Math.E")
+
+        .replace(/√\(/g,"Math.sqrt(")
+
+        .replace(/sin\(/g,"sin(")
+
+        .replace(/cos\(/g,"cos(")
+
+        .replace(/tan\(/g,"tan(");
 
 }
 

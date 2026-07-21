@@ -59,9 +59,18 @@ function handleInput(value){
 
             break;
 
+        case "DEG":
+
+            angleMode = "DEG";
+            break;
+
+        case "RAD":
+
+            angleMode = "RAD";
+            break;
+
         case "=":
 
-            // Phase 5.3
             break;
 
         default:
@@ -71,7 +80,6 @@ function handleInput(value){
     }
 
 }
-
 // ------------------------------
 // Append
 // ------------------------------
