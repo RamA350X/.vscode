@@ -1,0 +1,63 @@
+.glow{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(130px);
+
+    animation:float 9s ease-in-out infinite;
+
+}
+
+.glow1{
+
+    width:320px;
+
+    height:320px;
+
+    left:-120px;
+
+    top:-100px;
+
+    background:#2563eb;
+
+}
+
+.glow2{
+
+    width:280px;
+
+    height:280px;
+
+    right:-80px;
+
+    bottom:-60px;
+
+    background:#7c3aed;
+
+    animation-delay:3s;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(40px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}

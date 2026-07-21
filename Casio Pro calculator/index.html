@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CASIO Pro Calculator</title>
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+
+    <div class="background">
+
+        <div class="glow glow1"></div>
+
+        <div class="glow glow2"></div>
+
+    </div>
+
+    <!-- Calculator -->
+
+    <main class="container">
+
+        <section class="calculator">
+
+            <!-- Header -->
+
+            <header class="header">
+
+                <div class="logo">
+
+                    CASIO <span>PRO</span>
+
+                </div>
+
+                <div class="mode">
+
+                    SCIENTIFIC
+
+                </div>
+
+            </header>
+
+            <!-- Display -->
+
+            <section class="display">
+
+                <div class="expression"></div>
+
+                <div class="result"></div>
+
+            </section>
+
+            <!-- Keypad -->
+
+            <section class="keypad">
+
+                <!-- Top Function Row -->
+
+                <button class="btn function" data-value="SHIFT">SHIFT</button>
+                <button class="btn function" data-value="ALPHA">ALPHA</button>
+                <button class="btn function" data-value="MODE">MODE</button>
+                <button class="btn function" data-value="DEG">DEG</button>
+                <button class="btn function" data-value="RAD">RAD</button>
+
+                <!-- Scientific -->
+
+                <button class="btn scientific" data-value="sin(">sin</button>
+                <button class="btn scientific" data-value="cos(">cos</button>
+                <button class="btn scientific" data-value="tan(">tan</button>
+                <button class="btn scientific" data-value="log(">log</button>
+                <button class="btn scientific" data-value="ln(">ln</button>
+
+                <button class="btn scientific" data-value="asin(">asin</button>
+                <button class="btn scientific" data-value="acos(">acos</button>
+                <button class="btn scientific" data-value="atan(">atan</button>
+                <button class="btn scientific" data-value="√(">√</button>
+                <button class="btn scientific" data-value="x²">x²</button>
+
+                <button class="btn scientific" data-value="xʸ">xʸ</button>
+                <button class="btn scientific" data-value="π">π</button>
+                <button class="btn scientific" data-value="e">e</button>
+                <button class="btn scientific" data-value="n!">n!</button>
+                <button class="btn scientific" data-value="(">(</button>
+                <button class="btn scientific" data-value=")">)</button>
+
+                <!-- Main -->
+
+                <button class="btn danger" data-value="AC">AC</button>
+                <button class="btn operator" data-value="DEL">DEL</button>
+                <button class="btn operator" data-value="%">%</button>
+                <button class="btn operator" data-value="/">÷</button>
+                <button class="btn operator" data-value="⌫">⌫</button>
+
+                <button class="btn" data-value="7">7</button>
+                <button class="btn" data-value="8">8</button>
+                <button class="btn" data-value="9">9</button>
+                <button class="btn operator" data-value="*">×</button>
+                <button class="btn operator" data-value="1/x">1/x</button>
+
+                <button class="btn" data-value="4">4</button>
+                <button class="btn" data-value="5">5</button>
+                <button class="btn" data-value="6">6</button>
+                <button class="btn operator" data-value="-">−</button>
+                <button class="btn operator" data-value="x³">x³</button>
+
+                <button class="btn" data-value="1">1</button>
+                <button class="btn" data-value="2">2</button>
+                <button class="btn" data-value="3">3</button>
+                <button class="btn operator" data-value="+">+</button>
+                <button class="btn operator" data-value="EXP">EXP</button>
+
+                <button class="btn" data-value="±">±</button>
+                <button class="btn" data-value="0">0</button>
+                <button class="btn" data-value=".">.</button>
+                <button class="btn equal" data-value="=">=</button>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="js/parser.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

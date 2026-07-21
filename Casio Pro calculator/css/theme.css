@@ -1,0 +1,25 @@
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(circle at top left,#1e40af 0%,transparent 35%),
+
+    radial-gradient(circle at bottom right,#6d28d9 0%,transparent 35%),
+
+    linear-gradient(
+
+        135deg,
+
+        #030712,
+
+        #08111f,
+
+        #02050d
+
+    );
+
+}

@@ -1,0 +1,113 @@
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:28px;
+
+}
+
+.logo{
+
+    color:white;
+
+    font-size:42px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+}
+
+.logo span{
+
+    color:#60a5fa;
+
+}
+
+.mode{
+
+    color:#60a5fa;
+
+    font-weight:600;
+
+}
+
+.display{
+
+    height:190px;
+
+    border-radius:24px;
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        #01040a,
+
+        #020611
+
+    );
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    box-shadow:
+
+        inset 0 0 30px rgba(0,0,0,.8);
+
+}
+
+.expression{
+
+    text-align:right;
+
+    color:#94a3b8;
+
+    font-size:24px;
+
+    min-height:32px;
+
+    overflow-x:auto;
+
+    white-space:nowrap;
+
+    scrollbar-width:none;
+
+}
+
+.expression::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.result{
+
+    text-align:right;
+
+    margin-top:18px;
+
+    color:white;
+
+    font-size:80px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-shadow:
+
+        0 0 20px rgba(255,255,255,.12);
+
+}
