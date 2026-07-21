@@ -105,3 +105,13 @@
     font-size:24px;
 
 }
+
+.active-key{
+
+    transform:scale(0.94);
+
+    filter:brightness(1.35);
+
+    transition:.1s;
+
+}
