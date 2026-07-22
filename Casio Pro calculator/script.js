@@ -48,8 +48,6 @@ function updateDisplay() {
 
 function handleInput(value) {
 
-    console.count("handleInput");
-
     switch (value) {
 
         case "AC":
