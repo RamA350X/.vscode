@@ -55,7 +55,10 @@
 
             <section class="display">
 
-                <div class="expression"></div>
+                <div class="expression-row">
+                    <span id="memoryIndicator"></span>
+                    <div class="expression"></div>
+                </div>
 
                 <div class="result"></div>
 
@@ -67,11 +70,11 @@
 
                 <!-- Top Function Row -->
 
-                <button class="btn function" data-value="SHIFT">SHIFT</button>
-                <button class="btn function" data-value="ALPHA">ALPHA</button>
+                <button class="btn function" data-value="MC">MC</button>
+                <button class="btn function" data-value="MR">MR</button>
+                <button class="btn function" data-value="M+">M+</button>
+                <button class="btn function" data-value="M-">M−</button>
                 <button class="btn function" data-value="MODE">MODE</button>
-                <button class="btn function" data-value="DEG">DEG</button>
-                <button class="btn function" data-value="RAD">RAD</button>
 
                 <!-- Scientific -->
 
@@ -130,9 +133,10 @@
         </section>
 
     </main>
-    
+
     <script src="js/scientific.js"></script>
     <script src="js/parser.js"></script>
+    <script src="js/memory.js"></script>
     <script src="script.js"></script>
     <script src="js/keyboard.js"></script>
 

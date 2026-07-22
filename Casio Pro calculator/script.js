@@ -10,6 +10,8 @@
 
 const expressionDisplay = document.querySelector(".expression");
 const resultDisplay = document.querySelector(".result");
+const memoryIndicator =
+    document.getElementById("memoryIndicator");
 
 // ------------------------------
 // Calculator State
@@ -27,7 +29,7 @@ const calculator = {
 // Update Display
 // ------------------------------
 
-function updateDisplay(){
+function updateDisplay() {
 
     expressionDisplay.textContent =
         calculator.expression || "Ready...";
@@ -35,15 +37,18 @@ function updateDisplay(){
     resultDisplay.textContent =
         calculator.result;
 
+    memoryIndicator.textContent =
+        memoryValue !== 0 ? "M" : "";
+
 }
 
 // ------------------------------
 // Input Manager
 // ------------------------------
 
-function handleInput(value){
+function handleInput(value) {
 
-    switch(value){
+    switch (value) {
 
         case "AC":
 
@@ -77,6 +82,28 @@ function handleInput(value){
 
             appendCharacter(value);
 
+        case "MC":
+
+            memoryClear();
+            break;
+
+        case "MR":
+
+            calculator.expression += memoryRecall();
+            calculator.result = calculate(calculator.expression);
+            updateDisplay();
+            break;
+
+        case "M+":
+
+            memoryAdd(calculator.result);
+            break;
+
+        case "M-":
+
+            memorySubtract(calculator.result);
+            break;
+
     }
 
 }
@@ -84,7 +111,7 @@ function handleInput(value){
 // Append
 // ------------------------------
 
-function appendCharacter(value){
+function appendCharacter(value) {
 
     calculator.expression += value;
 
@@ -99,10 +126,10 @@ function appendCharacter(value){
 // Delete
 // ------------------------------
 
-function deleteCharacter(){
+function deleteCharacter() {
 
     calculator.expression =
-        calculator.expression.slice(0,-1);
+        calculator.expression.slice(0, -1);
 
     calculator.result =
         calculate(calculator.expression);
@@ -115,11 +142,11 @@ function deleteCharacter(){
 // Clear
 // ------------------------------
 
-function clearCalculator(){
+function clearCalculator() {
 
-    calculator.expression="";
+    calculator.expression = "";
 
-    calculator.result="0";
+    calculator.result = "0";
 
     updateDisplay();
 
@@ -130,19 +157,19 @@ function clearCalculator(){
 // ------------------------------
 
 document.querySelectorAll(".btn")
-.forEach(button=>{
+    .forEach(button => {
 
-    button.addEventListener("click",()=>{
+        button.addEventListener("click", () => {
 
-        handleInput(
+            handleInput(
 
-            button.dataset.value
+                button.dataset.value
 
-        );
+            );
+
+        });
 
     });
-
-});
 
 // ------------------------------
 
@@ -158,15 +185,15 @@ console.log(
 
 );
 
-function calculatePreview(){
+function calculatePreview() {
 
-    if(calculator.expression===""){
+    if (calculator.expression === "") {
 
-        calculator.result="0";
+        calculator.result = "0";
         return;
     }
 
-    try{
+    try {
 
         const converted =
             convertExpression(calculator.expression);
@@ -176,9 +203,9 @@ function calculatePreview(){
 
     }
 
-    catch{
+    catch {
 
-        calculator.result="...";
+        calculator.result = "...";
     }
 
 }
