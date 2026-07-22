@@ -3,42 +3,42 @@
 // Scientific Functions
 // ======================================
 
-let angleMode = "DEG";
+// ======================================
+// CASIO PRO CALCULATOR
+// Scientific Button Handler
+// ======================================
 
-// ----------------------
-// Angle Conversion
-// ----------------------
+function handleScientific(value){
 
-function toRadians(angle){
+    switch(value){
 
-    if(angleMode === "DEG"){
+        case "sin(":
+        case "cos(":
+        case "tan(":
+        case "asin(":
+        case "acos(":
+        case "atan(":
+        case "log(":
+        case "ln(":
+        case "√(":
 
-        return angle * Math.PI / 180;
+            appendCharacter(value);
+            return true;
+
+        case "π":
+
+            appendCharacter("π");
+            return true;
+
+        case "e":
+
+            appendCharacter("e");
+            return true;
+
+        default:
+
+            return false;
 
     }
-
-    return angle;
-
-}
-
-// ----------------------
-// Scientific Functions
-// ----------------------
-
-function sin(x){
-
-    return Math.sin(toRadians(x));
-
-}
-
-function cos(x){
-
-    return Math.cos(toRadians(x));
-
-}
-
-function tan(x){
-
-    return Math.tan(toRadians(x));
 
 }

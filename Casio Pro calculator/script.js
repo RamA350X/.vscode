@@ -26,6 +26,12 @@ const calculator = {
 };
 
 // ------------------------------
+// Angle Mode
+// ------------------------------
+
+let angleMode = "DEG";
+
+// ------------------------------
 // Update Display
 // ------------------------------
 
@@ -39,6 +45,24 @@ function updateDisplay() {
 
     memoryIndicator.textContent =
         memoryValue !== 0 ? "M" : "";
+
+}
+
+function showToast(message) {
+
+    const toast = document.getElementById("toast");
+
+    if (!toast) return;
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 1500);
 
 }
 
@@ -67,11 +91,21 @@ function handleInput(value) {
         case "DEG":
 
             angleMode = "DEG";
+
+            showToast("Angle Mode: DEG", "info");
+
+            updateDisplay();
+
             break;
 
         case "RAD":
 
             angleMode = "RAD";
+
+            showToast("Angle Mode: RAD", "info");
+
+            updateDisplay();
+
             break;
 
         case "=":
@@ -88,6 +122,10 @@ function handleInput(value) {
             break;
 
         default:
+
+            if (handleScientific(value))
+                break;
+
             appendCharacter(value);
             break;
 
