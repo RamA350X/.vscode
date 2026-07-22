@@ -88,23 +88,11 @@ function handleInput(value) {
 
             break;
 
-        case "DEG":
+        case "MODE":
 
-            angleMode = "DEG";
+            angleMode = angleMode === "DEG" ? "RAD" : "DEG";
 
-            showToast("Angle Mode: DEG", "info");
-
-            updateDisplay();
-
-            break;
-
-        case "RAD":
-
-            angleMode = "RAD";
-
-            showToast("Angle Mode: RAD", "info");
-
-            updateDisplay();
+            showToast("Angle Mode: " + angleMode);
 
             break;
 

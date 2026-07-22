@@ -47,26 +47,48 @@ function convertExpression(expression) {
 
         .replace(/ln\(/g, "Math.log(")
 
-        .replace(/sin\(([^()]*)\)/g,
+        .replace(/asin\(([^()]*)\)/g,
+            (_, value) =>
+                angleMode === "DEG"
+                    ? `(Math.asin(${value})*180/Math.PI)`
+                    : `Math.asin(${value})`
+        )
+
+        .replace(/acos\(([^()]*)\)/g,
+            (_, value) =>
+                angleMode === "DEG"
+                    ? `(Math.acos(${value})*180/Math.PI)`
+                    : `Math.acos(${value})`
+        )
+
+        .replace(/atan\(([^()]*)\)/g,
+            (_, value) =>
+                angleMode === "DEG"
+                    ? `(Math.atan(${value})*180/Math.PI)`
+                    : `Math.atan(${value})`
+        )
+
+        .replace(/(?<!a)sin\(([^()]*)\)/g,
             (_, value) =>
                 angleMode === "DEG"
                     ? `Math.sin((${value})*Math.PI/180)`
                     : `Math.sin(${value})`
         )
 
-        .replace(/cos\(([^()]*)\)/g,
+        .replace(/(?<!a)cos\(([^()]*)\)/g,
             (_, value) =>
                 angleMode === "DEG"
                     ? `Math.cos((${value})*Math.PI/180)`
                     : `Math.cos(${value})`
         )
 
-        .replace(/tan\(([^()]*)\)/g,
+        .replace(/(?<!a)tan\(([^()]*)\)/g,
             (_, value) =>
                 angleMode === "DEG"
                     ? `Math.tan((${value})*Math.PI/180)`
                     : `Math.tan(${value})`
         )
+
 
         .replace(/(\d+(\.\d+)?)x²/g, "Math.pow($1,2)")
         .replace(/(\d+(\.\d+)?)x³/g, "Math.pow($1,3)")
@@ -109,8 +131,9 @@ function calculate(expression) {
 
     }
 
-    catch {
+    catch (error) {
 
+        console.error(error);
         return "...";
 
     }
