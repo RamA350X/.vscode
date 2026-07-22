@@ -3,6 +3,32 @@
 // Parser Module
 // ======================================
 
+// ======================================
+// Factorial
+// ======================================
+
+function factorial(n) {
+
+    n = Number(n);
+
+    if (n < 0 || !Number.isInteger(n)) {
+
+        throw new Error("Invalid factorial");
+
+    }
+
+    let result = 1;
+
+    for (let i = 2; i <= n; i++) {
+
+        result *= i;
+
+    }
+
+    return result;
+
+}
+
 function convertExpression(expression) {
 
     return expression
@@ -43,6 +69,13 @@ function convertExpression(expression) {
         )
 
         .replace(/(\d+(\.\d+)?)x²/g, "Math.pow($1,2)")
+        .replace(/(\d+(\.\d+)?)x³/g, "Math.pow($1,3)")
+        .replace(/(\d+(\.\d+)?)xʸ(\d+(\.\d+)?)/g, "Math.pow($1,$3)")
+        .replace(/1\/x(\d+(\.\d+)?)/g, "1/($1)")
+        .replace(
+            /(\d+)n!/g,
+            "factorial($1)"
+        )
 
 }
 
