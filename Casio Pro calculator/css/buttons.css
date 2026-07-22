@@ -1,117 +1,150 @@
-.keypad{
+.keypad {
 
-    margin-top:30px;
+    margin-top: 30px;
 
-    display:grid;
+    display: grid;
 
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
 
-    gap:16px;
+    gap: 16px;
 
 }
 
-.btn{
+.btn {
 
-    height:70px;
+    overflow: hidden;
 
-    border:none;
+    position: relative;
 
-    border-radius:20px;
+    height: 70px;
 
-    cursor:pointer;
+    border: none;
 
-    font-size:18px;
+    border-radius: 20px;
 
-    font-weight:600;
+    cursor: pointer;
 
-    color:white;
+    font-size: 18px;
 
-    background:rgba(255,255,255,.08);
+    font-weight: 600;
 
-    border:1px solid rgba(255,255,255,.08);
+    color: white;
 
-    backdrop-filter:blur(18px);
+    background: rgba(255, 255, 255, .08);
 
-    transition:.25s;
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+
+    transition: .25s;
 
     box-shadow:
-        0 10px 25px rgba(0,0,0,.25),
-        inset 0 1px rgba(255,255,255,.15);
+        0 10px 25px rgba(0, 0, 0, .25),
+        inset 0 1px rgba(255, 255, 255, .15);
 
 }
 
-.btn:hover{
+.btn:hover {
 
     transform:
-        translateY(-5px)
-        scale(1.03);
+        translateY(-5px) scale(1.03);
 
-    background:rgba(255,255,255,.18);
+    background: rgba(255, 255, 255, .18);
 
     box-shadow:
 
-        0 20px 35px rgba(0,0,0,.35),
+        0 20px 35px rgba(0, 0, 0, .35),
 
-        0 0 20px rgba(96,165,250,.18);
+        0 0 20px rgba(96, 165, 250, .18);
 
 }
 
-.btn:active{
+.btn:active {
 
     transform:
 
-        scale(.95)
-
-        translateY(2px);
+        scale(.95) translateY(2px);
 
 }
 
-.function{
+.function {
 
-    background:#0f172a;
+    background: #0f172a;
 
-    color:#38bdf8;
+    color: #38bdf8;
 
-    font-size:14px;
-
-}
-
-.scientific{
-
-    background:#312e81;
-
-    color:#ddd6fe;
+    font-size: 14px;
 
 }
 
-.operator{
+.scientific {
 
-    background:#2563eb;
+    background: #312e81;
 
-}
-
-.danger{
-
-    background:#dc2626;
+    color: #ddd6fe;
 
 }
 
-.equal{
+.operator {
 
-    background:#10b981;
-
-    grid-column:span 2;
-
-    font-size:24px;
+    background: #2563eb;
 
 }
 
-.active-key{
+.danger {
 
-    transform:scale(0.94);
+    background: #dc2626;
 
-    filter:brightness(1.35);
+}
 
-    transition:.1s;
+.equal {
+
+    background: #10b981;
+
+    grid-column: span 2;
+
+    font-size: 24px;
+
+}
+
+.active-key {
+
+    transform: scale(0.94);
+
+    filter: brightness(1.35);
+
+    transition: .1s;
+
+}
+
+/* ======================================
+   Ripple Effect
+====================================== */
+
+.ripple{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    transform:scale(0);
+
+    animation:ripple .6s linear;
+
+    background:rgba(255,255,255,.35);
+
+    pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+    to{
+
+        transform:scale(4);
+
+        opacity:0;
+
+    }
 
 }
