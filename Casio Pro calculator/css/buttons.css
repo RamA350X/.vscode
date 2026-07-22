@@ -30,7 +30,7 @@
 
     color: white;
 
-    background: rgba(255, 255, 255, .08);
+    background: var(--button);
 
     border: 1px solid rgba(255, 255, 255, .08);
 
@@ -88,7 +88,7 @@
 
 .operator {
 
-    background: #2563eb;
+    background: var(--operator);
 
 }
 
@@ -100,7 +100,7 @@
 
 .equal {
 
-    background: #10b981;
+    background: var(--equal);
 
     grid-column: span 2;
 

@@ -1,25 +1,77 @@
-body{
+/* ======================================
+   Theme Variables
+====================================== */
 
-    min-height:100vh;
+:root{
 
-    overflow:hidden;
+    --bg-primary:#0f172a;
+    --bg-secondary:#1e293b;
 
-    background:
+    --card-bg:rgba(255,255,255,.08);
 
-    radial-gradient(circle at top left,#1e40af 0%,transparent 35%),
+    --text:#ffffff;
 
-    radial-gradient(circle at bottom right,#6d28d9 0%,transparent 35%),
+    --button:#2b3445;
 
-    linear-gradient(
+    --operator:#2563eb;
 
-        135deg,
+    --equal:#10b981;
 
-        #030712,
+}
 
-        #08111f,
+/* ===== Light Theme ===== */
 
-        #02050d
+body.light{
 
-    );
+    --bg-primary:#f3f4f6;
+    --bg-secondary:#dbe4ee;
+
+    --card-bg:rgba(255,255,255,.90);
+
+    --text:#111827;
+
+    --button:#ffffff;
+
+    --operator:#3b82f6;
+
+    --equal:#16a34a;
+
+}
+
+/* ===== Ocean Theme ===== */
+
+body.ocean{
+
+    --bg-primary:#071b2d;
+    --bg-secondary:#10375c;
+
+    --card-bg:rgba(25,70,120,.25);
+
+    --text:#ffffff;
+
+    --button:#1c4e80;
+
+    --operator:#2563eb;
+
+    --equal:#0ea5e9;
+
+}
+
+/* ===== Matrix Theme ===== */
+
+body.matrix{
+
+    --bg-primary:#000000;
+    --bg-secondary:#071307;
+
+    --card-bg:rgba(0,255,0,.05);
+
+    --text:#00ff88;
+
+    --button:#061706;
+
+    --operator:#00aa55;
+
+    --equal:#00ff88;
 
 }

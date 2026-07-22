@@ -48,6 +48,8 @@ function updateDisplay() {
 
 function handleInput(value) {
 
+    console.count("handleInput");
+
     switch (value) {
 
         case "AC":
@@ -88,11 +90,10 @@ function handleInput(value) {
             break;
 
         default:
-
             appendCharacter(value);
+            break;
 
         case "MC":
-
             memoryClear();
             break;
 
@@ -240,7 +241,7 @@ renderHistory();
 
 document.querySelectorAll(".btn").forEach(button => {
 
-    button.addEventListener("click", function(e){
+    button.addEventListener("click", function (e) {
 
         const ripple = document.createElement("span");
 
@@ -270,3 +271,4 @@ document.querySelectorAll(".btn").forEach(button => {
     });
 
 });
+
