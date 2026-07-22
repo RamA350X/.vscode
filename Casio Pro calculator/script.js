@@ -76,6 +76,15 @@ function handleInput(value) {
 
         case "=":
 
+            calculator.result = calculate(calculator.expression);
+
+            addHistory(
+                calculator.expression,
+                calculator.result
+            );
+
+            updateDisplay();
+
             break;
 
         default:
@@ -179,11 +188,11 @@ updateDisplay();
 // Testing Tokenizer
 // ===========================
 
-console.log(
+/*console.log(
 
     tokenize("25+sin(30)*5")
 
-);
+);*/
 
 function calculatePreview() {
 
@@ -209,3 +218,18 @@ function calculatePreview() {
     }
 
 }
+
+const clearHistoryBtn = document.getElementById("clearHistoryBtn");
+
+if (clearHistoryBtn) {
+
+    clearHistoryBtn.addEventListener("click", () => {
+
+        clearHistory();
+
+    });
+
+}
+
+loadHistory();
+renderHistory();
