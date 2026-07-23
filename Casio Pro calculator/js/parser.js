@@ -121,6 +121,12 @@ function calculate(expression) {
             '"use strict"; return (' + converted + ')'
         )();
 
+        if (!Number.isFinite(answer)) {
+
+            return "Math Error";
+
+        }
+
         if (answer === undefined) {
 
             return "0";
@@ -134,7 +140,26 @@ function calculate(expression) {
     catch (error) {
 
         console.error(error);
-        return "...";
+
+        if (error instanceof SyntaxError) {
+
+            return "Syntax Error";
+
+        }
+
+        if (error instanceof RangeError) {
+
+            return "Math Error";
+
+        }
+
+        if (error instanceof TypeError) {
+
+            return "Math Error";
+
+        }
+
+        return "Error";
 
     }
 

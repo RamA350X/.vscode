@@ -10,8 +10,8 @@
 
 const expressionDisplay = document.querySelector(".expression");
 const resultDisplay = document.querySelector(".result");
-const memoryIndicator =
-    document.getElementById("memoryIndicator");
+const memoryIndicator = document.getElementById("memoryIndicator");
+const angleIndicator = document.getElementById("angleIndicator");
 
 // ------------------------------
 // Calculator State
@@ -45,6 +45,8 @@ function updateDisplay() {
 
     memoryIndicator.textContent =
         memoryValue !== 0 ? "M" : "";
+
+    angleIndicator.textContent = angleMode;
 
 }
 
@@ -149,8 +151,18 @@ function appendCharacter(value) {
 
     calculator.expression += value;
 
-    calculator.result =
-        calculate(calculator.expression);
+    if (/[+\-*/.(]$/.test(calculator.expression)) {
+
+        calculator.result = "";
+
+    }
+
+    else {
+
+        calculator.result =
+            calculate(calculator.expression);
+
+    }
 
     updateDisplay();
 
