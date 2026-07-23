@@ -47,7 +47,19 @@ function handleScientific(value) {
 
             return true;
 
-        
+        case "1/x":
+
+            calculator.expression =
+                "1/(" + calculator.expression + ")";
+
+            calculator.result =
+                calculate(calculator.expression);
+
+            updateDisplay();
+
+            return true;
+
+
 
         default:
 

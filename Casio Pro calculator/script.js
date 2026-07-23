@@ -148,6 +148,27 @@ function handleInput(value) {
             memorySubtract(calculator.result);
             break;
 
+        case "±":
+
+            if (calculator.expression.startsWith("-")) {
+
+                calculator.expression =
+                    calculator.expression.substring(1);
+
+            } else {
+
+                calculator.expression =
+                    "-" + calculator.expression;
+
+            }
+
+            calculator.result =
+                calculate(calculator.expression);
+
+            updateDisplay();
+
+            break;
+
     }
 
 }

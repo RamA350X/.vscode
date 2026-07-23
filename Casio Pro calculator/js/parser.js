@@ -101,6 +101,19 @@ function convertExpression(expression) {
 
 }
 
+function balanceBrackets(expression) {
+
+    const open =
+
+        (expression.match(/\(/g) || []).length;
+
+    const close =
+
+        (expression.match(/\)/g) || []).length;
+
+    return expression + ")".repeat(open - close);
+
+}
 
 function calculate(expression) {
 
@@ -112,7 +125,10 @@ function calculate(expression) {
 
     try {
 
-        const converted = convertExpression(expression);
+        expression = balanceBrackets(expression);
+
+        const converted =
+            convertExpression(expression);
 
         console.log("Original:", expression);
         console.log("Converted:", converted);
