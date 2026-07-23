@@ -8,9 +8,9 @@
 // Scientific Button Handler
 // ======================================
 
-function handleScientific(value){
+function handleScientific(value) {
 
-    switch(value){
+    switch (value) {
 
         case "sin(":
         case "cos(":
@@ -34,6 +34,20 @@ function handleScientific(value){
 
             appendCharacter("e");
             return true;
+
+        case "xʸ":
+
+            appendCharacter("**");
+
+            return true;
+
+        case "x²":
+
+            appendCharacter("**2");
+
+            return true;
+
+        
 
         default:
 
