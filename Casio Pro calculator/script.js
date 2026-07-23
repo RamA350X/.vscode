@@ -21,7 +21,9 @@ const calculator = {
 
     expression: "",
 
-    result: "0"
+    result: "0",
+
+    lastAnswer: "0"
 
 };
 
@@ -119,6 +121,12 @@ function handleInput(value) {
             appendCharacter(value);
             break;
 
+        case "ANS":
+
+            appendCharacter(calculator.lastAnswer);
+
+            break;
+
         case "MC":
             memoryClear();
             break;
@@ -149,6 +157,23 @@ function handleInput(value) {
 
 function appendCharacter(value) {
 
+    const lastChar =
+        calculator.expression.slice(-1);
+
+    const needsMultiply =
+
+        calculator.expression !== "" &&
+
+        /[0-9.)πe]/.test(lastChar) &&
+
+        (/^[A-Za-z(πe√]/.test(value));
+
+    if (needsMultiply) {
+
+        calculator.expression += "*";
+
+    }
+
     calculator.expression += value;
 
     if (/[+\-*/.(]$/.test(calculator.expression)) {
@@ -161,6 +186,7 @@ function appendCharacter(value) {
 
         calculator.result =
             calculate(calculator.expression);
+        calculator.lastAnswer = calculator.result;
 
     }
 
