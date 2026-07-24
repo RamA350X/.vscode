@@ -94,10 +94,9 @@ function convertExpression(expression) {
         .replace(/(\d+(\.\d+)?)x³/g, "Math.pow($1,3)")
         .replace(/(\d+(\.\d+)?)xʸ(\d+(\.\d+)?)/g, "Math.pow($1,$3)")
         .replace(/1\/x(\d+(\.\d+)?)/g, "1/($1)")
-        .replace(
-            /(\d+)n!/g,
-            "factorial($1)"
-        )
+        .replace(/(\d+)n!/g,"factorial($1)")
+
+        
 
 }
 
@@ -130,8 +129,6 @@ function calculate(expression) {
         const converted =
             convertExpression(expression);
 
-        console.log("Original:", expression);
-        console.log("Converted:", converted);
 
         const answer = Function(
             '"use strict"; return (' + converted + ')'
@@ -180,3 +177,4 @@ function calculate(expression) {
     }
 
 }
+

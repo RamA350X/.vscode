@@ -3,13 +3,20 @@
 // Keyboard Support
 // ==========================================
 
-document.addEventListener("keydown", function(event){
+document.addEventListener("keydown", function (event) {
 
     const key = event.key;
+    // Ignore function keys (F1–F12)
+
+    if (/^F\d+$/.test(key)) {
+
+        return;
+
+    }
 
     // Numbers
 
-    if(/[0-9]/.test(key)){
+    if (/[0-9]/.test(key)) {
 
         handleInput(key);
         highlightButton(key);
@@ -17,9 +24,19 @@ document.addEventListener("keydown", function(event){
 
     }
 
+    // Constants
+
+    if (key === "e") {
+
+        handleInput("e");
+        highlightButton("e");
+        return;
+
+    }
+
     // Operators
 
-    switch(key){
+    switch (key) {
 
         case "+":
         case "-":
@@ -65,21 +82,21 @@ document.addEventListener("keydown", function(event){
 
 });
 
-function highlightButton(value){
+function highlightButton(value) {
 
     const buttons = document.querySelectorAll(".btn");
 
-    buttons.forEach(button=>{
+    buttons.forEach(button => {
 
-        if(button.dataset.value===value){
+        if (button.dataset.value === value) {
 
             button.classList.add("active-key");
 
-            setTimeout(()=>{
+            setTimeout(() => {
 
                 button.classList.remove("active-key");
 
-            },150);
+            }, 150);
 
         }
 

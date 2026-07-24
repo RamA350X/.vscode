@@ -272,11 +272,7 @@ updateDisplay();
 // Testing Tokenizer
 // ===========================
 
-/*console.log(
 
-    tokenize("25+sin(30)*5")
-
-);*/
 
 function calculatePreview() {
 

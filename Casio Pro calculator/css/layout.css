@@ -81,6 +81,36 @@ body {
 
 }
 
+/* ======================================
+   Header
+====================================== */
+
+.header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 18px;
+
+}
+
+.title {
+
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+    letter-spacing: 2px;
+
+}
+
 .calculator::before {
 
     content: "";
@@ -101,4 +131,12 @@ body {
 
             transparent);
 
+}
+
+.mode {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #66a8ff;
+    letter-spacing: 1px;
 }
